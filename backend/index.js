@@ -8,6 +8,10 @@ app.use(cors())
 
 app.use(express.json())
 
+//middlerware error
+
+
+
 //Route to fetch country data 
 app.get("/countries/:country", async(req, res)=> {
     try {
@@ -17,8 +21,9 @@ app.get("/countries/:country", async(req, res)=> {
         res.json(data)
         console.log(data)
         
-    } catch (error) {
-        console.error(error.message)
+    } catch {
+      
+        
         
     }
 })
