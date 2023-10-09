@@ -1,14 +1,14 @@
 import React from 'react'
 import CountryForm from '../components/CountryForm'
-import Country from '../components/Country'
-const CountryDisplay = () => {
+
+const CountryPage = () => {
   return (
     <>
     
     <CountryForm/>
-    <Country/>
+
     </>
   )
 }
 
-export default CountryDisplay
+export default CountryPage

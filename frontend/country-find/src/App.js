@@ -1,6 +1,6 @@
-import { Outlet, createBrowserRouter, createRoutesFromElements, Route, Link, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, createRoutesFromElements, Route,  RouterProvider } from 'react-router-dom'
 import Home from './pages/Home';
-import CountryDisplay from './pages/CountryDisplay';
+import CountryPage from './pages/CountryPage';
 import Root from './layout/Root';
 
 
@@ -10,7 +10,7 @@ function App() {
 		createRoutesFromElements(
 			<Route path="/" element={<Root />}>
 				<Route index element={<Home />} />
-				<Route path="/country" element={<CountryDisplay />} />
+				<Route path="/country" element={<CountryPage />} />
 			</Route>
 		)
 	)

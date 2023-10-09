@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
+import Country from './Country';
 const CountryForm = () => {
 	const [countryData, setCountryData] = useState([])
 	const [country, setCountry] = useState("")
@@ -31,16 +32,10 @@ const CountryForm = () => {
 			/>
 
 			<Button className='btn btn-danger' onClick={fetchCountry}>Find Country</Button>
-			{countryData && countryData.map((each) => {
-				return (
-					<h1>{each.name.common}</h1>
-
-				)
-
-
-			})}
-
+			
+			<Country countryData={countryData}/>
 		</>
+		
 
 
 	)
