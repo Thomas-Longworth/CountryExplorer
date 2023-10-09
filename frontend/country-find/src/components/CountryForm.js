@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import Button from 'react-bootstrap/Button';
 const CountryForm = () => {
 	const [countryData, setCountryData] = useState([])
 	const [country, setCountry]=useState("")
@@ -21,6 +21,9 @@ const CountryForm = () => {
 	
 	return (
 		<>
+		<Button className='btn btn-danger'/>
+		<Button className='btn btn-primary'/>
+		<Button></Button>
 	
 			<input
 			value={country}
@@ -28,7 +31,7 @@ const CountryForm = () => {
 			onChange={(e)=> setCountry(e.target.value)}
 			/>
 
-			<button onClick={fetchCountry}>Find Country</button>
+			<Button className='btn btn-danger' onClick={fetchCountry}>Find Country</Button>
 			{countryData &&countryData.map((each)=> {
 				return (
 					<h1>{each.name.common}</h1>
