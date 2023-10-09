@@ -1,6 +1,7 @@
 import { Outlet, createBrowserRouter, createRoutesFromElements, Route, Link, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home';
 import CountryDisplay from './pages/CountryDisplay';
+import Root from './layout/Root';
 
 
 
@@ -29,36 +30,3 @@ function App() {
 
 export default App;
 
-
-const Root = () => {
-	return (
-		<>
-			<div class="container-fluid dark">
-				<nav className="navbar navbar-expand-lg navbar-dark dark">
-					<a className="navbar-brand" href="#">PeakPerformance</a>
-
-					<div className="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul className="navbar-nav mr-auto">
-							<li className="nav-item ">
-								<Link to="/">Home</Link>
-							</li>
-
-							<li className="nav-item">
-								<Link to="/country">Country</Link>
-							</li>
-
-						</ul>
-
-
-					</div>
-				</nav>
-			</div>
-			<div>
-				<Outlet />
-			</div>
-
-
-
-		</>
-	);
-};
