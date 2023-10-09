@@ -1,37 +1,38 @@
 import React from 'react'
 import { Outlet, createBrowserRouter, createRoutesFromElements, Route, Link, RouterProvider } from 'react-router-dom'
-
+import Footer from './Footer'
 const Root = () => {
-  return (
-    <>
-			<div className="container-fluid bg-dark">
-				<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-				<Link to="/">Main</Link>
+    return (
+        <>
+       
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand"><Link to="/">LOGO</Link></a>
+            
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-					<div className="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul className="navbar-nav mr-auto">
-							<li className="nav-item ">
-								<Link to="/">Home</Link>
-							</li>
-
-							<li className="nav-item">
-								<Link to="/country">Country</Link>
-							</li>
-
-						</ul>
-
-
-					</div>
-				</nav>
-			</div>
-			<div>
-				<Outlet />
-			</div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                        <a class="nav-link" ><Link to="/">Home</Link></a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" ><Link to="/country">Country</Link></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <Footer/>
+            <div>
+                <Outlet />
+            </div>
 
 
-
-		</>
-  )
+        
+        </>
+    )
 }
 
 export default Root
