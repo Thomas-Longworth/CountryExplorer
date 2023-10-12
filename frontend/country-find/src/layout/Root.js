@@ -1,34 +1,38 @@
 import React from 'react'
 import { Outlet, createBrowserRouter, createRoutesFromElements, Route, Link, RouterProvider } from 'react-router-dom'
 import Footer from './Footer'
+import { FaGlobe } from 'react-icons/fa';
 const Root = () => {
     return (
         <>
-       
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand"><Link to="/" className='text-light'>LOGO</Link></a>
+        <div className='container-fluid bg-dark'>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <Link class="navbar-brand" to="/" className='text-light'><h2><FaGlobe/></h2></Link>
             
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                
 
                 <div class="" >
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                        <a class="nav-link" ><Link to="/">Home</Link></a>
+                       <Link className='nav-link' to="/">Home</Link>
                         </li>
                        
                         <li class="nav-item">
-                            <a class="nav-link" ><Link to="/country">Country</Link></a>
+                          <Link  className='nav-link' to="/country">Country</Link>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <Footer/>
+
+        </div>
+       
+            
+            
+           
             <div>
                 <Outlet />
             </div>
-
+            <Footer/>
 
         
         </>

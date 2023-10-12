@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-import Button from 'react-bootstrap/Button';
+
 import Country from './Country';
+import { FaSearch } from 'react-icons/fa';
+
 const CountryForm = () => {
 	const [countryData, setCountryData] = useState([])
 	const [country, setCountry] = useState("")
 	const [status, setStatus] = useState("good")
 
-	const[loadingForm, setLoadingForm] = useState(false)
+	const [loadingForm, setLoadingForm] = useState(false)
 
 
 
@@ -22,7 +24,7 @@ const CountryForm = () => {
 			if (data.length > 0) {
 				setCountryData(data)
 			}
-			
+
 
 		} catch (error) {
 
@@ -30,28 +32,33 @@ const CountryForm = () => {
 		}
 		setLoadingForm(false)
 	}
-	console.log(status)
+
 
 
 	return (
 		<>
-			<h1>Status:{status}</h1>
 
-			<div className='container'>
-				<input
-					value={country}
-					type="text"
-					onChange={(e) => setCountry(e.target.value)}
-					placeholder='Enter Country Name Here'
-				/>
-				<Button disabled = {loadingForm}  className='btn btn-danger' onClick={fetchCountry}>Find</Button>
+			
+			
+				<div className="input-group mb-3 ">
+				<input 
+				className="form-control" 
+						value={country}
+						type="text"
+						onChange={(e) => setCountry(e.target.value)}
+						placeholder='Enter Country Name Here'
+					/>
+						<div className="input-group-append">
+						<button disabled={loadingForm} className='btn btn-outline-secondary' onClick={fetchCountry}><FaSearch /></button>
+						</div>
+				</div>
 
 
-			</div>
-
-
+		
+			
 
 			<Country countryData={countryData} />
+
 		</>
 
 

@@ -1,39 +1,52 @@
 import React from 'react'
 
-
+import Footer from '../layout/Footer'
 
 const Country = ({ countryData }) => {
 
 
 	return (
 		<>
-			<div className='container'>
-				<div className='row'>
-					{
-					countryData.length ===0?<h1>empty</h1>
+		
+		<div className='container px-3 '>
+		<div className='row'>
+			{
+				countryData.length === 0 ? <div className='col min-vh-100'><h1>No countries to diplay yet</h1></div>
 					:
-			
+
 					countryData.map((each, index) => {
 						return (
 							<>
-								<div key={index} className='col border'><h3>{each.name.official}</h3>
-								<div className=' border'><h3>Population: {each.population}</h3></div>
-								<div className=' border'><h3> Capital: {each.capital}</h3></div>
+							
+
 								
+								<div className='col'>
+									<div class="card " style={{ maxWidth: '18rem' }} >
+										<img class="card-img-top" src={each.flags.png} alt="country flag"/>
+											<div class="card-body">
+												<h5 class="card-title">{each.name.official}</h5>
+												
+											</div>
+											
+											<ul class="list-group list-group-flush">
+												<li class="list-group-item"><strong>Region:</strong> {each.region}</li>
+												<li class="list-group-item"><strong>Capital:</strong> {each.capital}</li>
+												<li class="list-group-item"><strong>Population:</strong> {each.population}</li>
+											</ul>
+											
+									</div>
 								</div>
-								
-								<div className='col border  '><img  className="img-fluid" src ={each.flags.png}/></div>
 							</>
 						)
 					})}
 
-				</div>
-			</div>
+		</div>
+	</div>
+		
+		
 			
-			{countryData.length ===0?<h1>No Country to diplay yet</h1>
-					:
-					countryData[0].name.official
-				}
+			
+			
 		</>
 	)
 }
