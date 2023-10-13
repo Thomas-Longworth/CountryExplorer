@@ -46,8 +46,7 @@ const CountryForm = () => {
 	return (
 		<>
 
-			{status}
-			<div className='container mt-3'>
+			<div className='container mt-4'>
 				<div className='row'>
 					<div className='col'><input
 						className="form-control"

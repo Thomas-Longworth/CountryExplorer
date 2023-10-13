@@ -1,5 +1,5 @@
 import React from 'react'
-import map from '../assets/images/map.jpg'
+import map from '../assets/images/map.png'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
