@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 import Country from './Country';
 import { FaSearch } from 'react-icons/fa';
@@ -8,17 +8,16 @@ const CountryForm = () => {
 	const [country, setCountry] = useState("")
 	const [status, setStatus] = useState("good")
 
-	const [loadingForm, setLoadingForm] = useState(false)
-
-
+	const [loading, setLoading] = useState(false)
 
 	const fetchCountry = async () => {
+
 		if (country === "") {
 			setStatus("empty try again")
 		}
 
 		try {
-			setLoadingForm(true)
+			setLoading(true)
 			const response = await fetch(`http://localhost:5000/countries/${country}`)
 			if (!response.ok) {
 				setStatus("country not found unfortuneatly please try again")
@@ -37,7 +36,7 @@ const CountryForm = () => {
 		} catch (error) {
 			console.log("An error occurred:", error);
 		} finally {
-			setLoadingForm(false);
+			setLoading(false);
 		}
 	}
 
@@ -45,26 +44,37 @@ const CountryForm = () => {
 
 	return (
 		<>
-
 			<div className='container mt-4'>
 				<div className='row'>
-					<div className='col'><input
+					<div className='col'>
+						<input
 						className="form-control"
 						value={country}
 						type="text"
 						onChange={(e) => setCountry(e.target.value)}
 						placeholder='Enter Country Name Here'
-					/></div>
-					<div className='col'>
-						<button disabled={loadingForm} className='btn btn-primary' onClick={fetchCountry}><FaSearch /></button>
+					/>
 					</div>
+					
+					<div className='col'>
+					{loading?
+						<div class="spinner-border text light" role="status">
+							<span class="sr-only"></span>
+						</div>
+						:<div>
+							<button disabled={loading} className='btn btn-primary' onClick={fetchCountry}><FaSearch /></button>
+						</div>
+				}
+					</div>
+				
+
 
 				</div>
 
 
 			</div>
+			
 
-		
 
 
 
