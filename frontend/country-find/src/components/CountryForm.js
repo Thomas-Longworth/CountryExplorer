@@ -4,28 +4,32 @@ import { FaSearch } from 'react-icons/fa';
 import { CountryContext } from '../Contexts/CountryContext'
 const CountryForm = () => {
 	const { countryData, setCountryData } = useContext(CountryContext)
-	const { status, setStatus } = useContext(CountryContext)
+	const { errorStatus, setErrorStatus } = useContext(CountryContext)
 	const [country, setCountry] = useState("")
 	const [loading, setLoading] = useState(false)
 
 	const fetchCountry = async () => {
 		if (country === "") {
 
-			return setStatus("empty try again")
+			return setErrorStatus(true)
 		}
 		try {
 			setLoading(true)
 			const response = await fetch(`http://localhost:5000/countries/${country}`)
 			if (!response.ok) {
-				setStatus("country not found unfortuneatly please try again")
+				setErrorStatus(true)
 				throw new Error(`HTTP Error countries not found: ${response.status}`);
 			}
+			
 			const data = await response.json()
 			setCountryData(data)
+			setErrorStatus(false)
 		} catch (error) {
 			console.log("An error occurred:", error);
 		} finally {
 			setLoading(false);
+		
+			
 		}
 	}
 
@@ -35,14 +39,23 @@ const CountryForm = () => {
 				<div className='row'>
 					<div className='col'>
 						<input
+							data-cy="input"
 							className="form-control"
 							value={country}
 							type="text"
 							onChange={(e) => setCountry(e.target.value)}
-							placeholder='Enter country here'
+							
+							placeholder="Enter country here"
+							
 						/>
-						<h4 className='text-danger'>{status}</h4>
+						<div className='bg-light text-danger'>
+						{errorStatus && <h6>error</h6>}
+						
+
+						</div>
+					
 					</div>
+					
 
 					<div className='col'>
 						{loading ?
@@ -50,7 +63,7 @@ const CountryForm = () => {
 								<span class="sr-only"></span>
 							</div>
 							: <div>
-								<button disabled={loading} className='btn btn-primary' onClick={fetchCountry}><FaSearch /></button>
+								<button data-cy="submit" disabled={loading} className='btn btn-primary' onClick={fetchCountry}><FaSearch /></button>
 							</div>
 						}
 					</div>

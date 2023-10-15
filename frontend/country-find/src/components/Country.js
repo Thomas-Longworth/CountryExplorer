@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Footer from '../layout/Footer'
-import {motion} from 'framer-motion'
+
 import { useContext } from 'react'
 import { CountryContext } from '../Contexts/CountryContext'
 const Country = () => {
@@ -21,13 +21,11 @@ const Country = () => {
 								return (
 									<>
 										<div 
-									
-										
 										 className='col-auto '>
-											<div 	key={each.name.official} class="card rounded" style={{ maxWidth: '18rem' }} >
+											<div data-cy="country-name"  	key={each.name.official} class="card rounded" style={{ maxWidth: '18rem' }} >
 												<img  class="card-img-top border-bottom "src={each.flags.png} alt="country flag" />
 												<div class="card-body">
-													<h5 class="card-title font-italic"><strong>{each.name.official}</strong></h5>
+													<h5  class="card-title font-italic"><strong>{each.name.official}</strong></h5>
 												</div>
 												<ul class="list-group list-group-flush">
 													<li class="list-group-item"><strong>Region:</strong> {each.region}</li>

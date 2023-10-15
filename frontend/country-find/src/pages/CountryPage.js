@@ -6,10 +6,10 @@ import { CountryContext } from '../Contexts/CountryContext'
 import Country from '../components/Country'
 const CountryPage = () => {
 	const [countryData, setCountryData] = useState([])
-	const [status, setStatus] = useState("")
+	const [errorStatus, setErrorStatus] = useState(false)
 	return (
 		<>
-			<CountryContext.Provider value={{countryData,setCountryData,status, setStatus}}>
+			<CountryContext.Provider value={{countryData,setCountryData,errorStatus, setErrorStatus}}>
 				<CountryForm />
 				<Country />
 

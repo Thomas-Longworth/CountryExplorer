@@ -11,7 +11,7 @@ const Home = () => {
           <p>Find out more about countries on the planet</p></div>
           <div className='col mt-2'>
           <button className='btn btn-danger'>
-            <Link style={{ textDecoration: "none", color: 'black' }} to="/country" className=''>Search now</Link>
+            <Link data-cy="linked" style={{ textDecoration: "none", color: 'black' }} to="/country" className=''>Search now</Link>
 
           </button>
             
