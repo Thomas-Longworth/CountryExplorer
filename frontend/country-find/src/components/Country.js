@@ -1,14 +1,18 @@
 import React from 'react'
 
 import Footer from '../layout/Footer'
-
-const Country = ({ countryData }) => {
+import {motion} from 'framer-motion'
+import { useContext } from 'react'
+import { CountryContext } from '../Contexts/CountryContext'
+const Country = () => {
+	const{countryData} = useContext(CountryContext)
 
 
 	return (
 		<>
 
-			<div className='container mt-3 px-2 '>
+			<div
+			 className='container mt-3 px-2 '>
 				<div className='row justify-content-center'>
 					{
 						countryData.length === 0 ? <div className='col min-vh-100'><h3>No countries to diplay yet</h3></div>
@@ -16,8 +20,11 @@ const Country = ({ countryData }) => {
 							countryData.map((each, index) => {
 								return (
 									<>
-										<div className='col-auto '>
-											<div class="card rounded" style={{ maxWidth: '18rem' }} >
+										<div 
+									
+										
+										 className='col-auto '>
+											<div 	key={each.name.official} class="card rounded" style={{ maxWidth: '18rem' }} >
 												<img  class="card-img-top border-bottom "src={each.flags.png} alt="country flag" />
 												<div class="card-body">
 													<h5 class="card-title font-italic"><strong>{each.name.official}</strong></h5>
