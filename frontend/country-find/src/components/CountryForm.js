@@ -49,7 +49,7 @@ const CountryForm = () => {
 							
 						/>
 						<div className='bg-light text-danger'>
-						{errorStatus && <h6>error</h6>}
+						{errorStatus && <h6 data-cy="error-message">error</h6>}
 						
 
 						</div>
