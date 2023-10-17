@@ -3,9 +3,110 @@
 ## Description
 I created this web application to allow users to input a country's name, fetch information about that country from the REST Countries API, and display it to the user. This project consists of both a React frontend and a Node.js backend running Express.
 
+## How to use
+
+Navigate to country form page
+Input country. Spelling must be correct
+Country will display
 
 ## Error Handling
 
+### API Fetch Error Handling:
+
+When the server attempts to fetch country data from the restcountries.com API, there are two main scenarios it checks for:
+
+a. Country Not Found:
+- If the fetch request to the API does not succeed (for instance, if the country name isn't recognized by the API), the server will respond with the status code that the API returned. Along with this, it sends a JSON message to the client saying { error: "Country not found" }.
+
+b. Successful Fetch:
+- If the fetch request is successful, the server will respond with the country data received from the API. It also logs this data to the console.
+
+General Error Handling:
+
+If any other unexpected error occurs during the process (like network issues, parsing issues, etc.), the server will:
+a. Log the error to the console with a message of what went wrong.
+
+b. Send a response to the client with a 500 status along with the status code, it sends a JSON message { error: "Internal server error" }.
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Testing
+
+Postman Testing
+
+![alt text](src/assets/images/test200.png)
+![alt text](src/assets/images/test404.png)
+![alt text](src/assets/images/collection.png)
+
+Cyrpess
+
+Cypress Component testing
+
+
+
+1. Empty Country Data Test:
+
+Purpose: Ensure that when no country data is provided, the component displays the message "No countries to display yet."
+Method: The component is mounted with an empty array for countryData.
+Expectation: The displayed message should be "No countries to display yet."
+
+2. Render Country Data Test:
+
+Purpose: Verify that the component correctly renders country details when provided with valid data.
+Method: The component is mounted with mock data for a single country (USA in this instance).
+Expectation: The component should:
+Display the country's official name.
+Show the country's flag image.
+Render the region, capital, population, and area information in separate list items.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cypres EtE test
+
+
+1. Country Input and Display Test:
+Purpose: Verify that a user can successfully input a country's name and subsequently view its details on the webpage.
+Steps:
+Navigate to the localhost application at port 3000.
+Click on a link or button (presumably leading to a form or input page) using the data attribute data-cy="linked".
+Input the name "ireland" into the input field labeled data-cy="input".
+Click the submit button with the data attribute data-cy="submit".
+Expectation: After submitting, the webpage should display the country name "Republic of Ireland" under an element with the data attribute data-cy="country-name".
+2. Invalid Country Input Test:
+Purpose: Ensure that an error message is displayed when a user inputs an invalid or non-existent country name.
+Steps:
+Navigate to the localhost application at port 3000.
+Click on a link or button using the data attribute data-cy="linked".
+Input the name "fakecountry"
+
+
+
+
+
+
+
+
+
+
 ## Deployment

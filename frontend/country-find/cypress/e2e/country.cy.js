@@ -16,6 +16,6 @@ describe('testing error message for inputting invalid country', () => {
     cy.get('[data-cy="input"]').type("fakecountry")
     cy.get('[data-cy="submit"]').click()
 
-    cy.get('[data-cy="error-message"]').contains('error')
+    cy.get('[data-cy="error-message"]').contains('Country not found or invalid input')
   })
-})
+}) 
