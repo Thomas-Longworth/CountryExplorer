@@ -28,39 +28,45 @@ const CountryForm = () => {
 			setLoading(false);
 		}
 	}
+	const handleSubmit =(e)=>{
+		e.preventDefault()
+		fetchCountry()
+	}
 
 	return (
 		<>
-			<div className='container mt-4'>
-				<div className='row'>
-					<div className='col'>
-						<input
-							data-cy="input"
-							className="form-control"
-							value={country}
-							type="text"
-							onChange={(e) => setCountry(e.target.value)}
-							
-							placeholder="Enter country here"
-							
-						/>
-						<div className='bg-light text-danger'>
-						{errorStatus && <h6 data-cy="error-message">Country not found or invalid input</h6>}
-					
+				<div className='container mt-4'>
+			<div className='row'>
+				<div className='col-md-6 offset-md-3'>
+					<form onSubmit={handleSubmit}>
+						<div className='d-flex align-items-center justify-content-between'>
+							<input
+								data-cy="input"
+								className="form-control mr-2"
+								style={{ flex: 1 }}
+								value={country}
+								type="text"
+								onChange={(e) => setCountry(e.target.value)}
+								placeholder="Enter country here"
+							/>
+							{loading ?
+								<div className="spinner-border text-dark" role="status">
+									<span className="sr-only"></span>
+								</div>
+								:
+								<button data-cy="submit" disabled={loading} className='btn btn-primary'>
+									<FaSearch />
+								</button>
+							}
 						</div>
-					</div>
-					<div className='col'>
-						{loading ?
-							<div class="spinner-border text light" role="status">
-								<span class="sr-only"></span>
-							</div>
-							: <div>
-								<button data-cy="submit" disabled={loading} className='btn btn-primary' onClick={fetchCountry}><FaSearch /></button>
-							</div>
-						}
-					</div>
+
+						<div className='bg-light text-danger mt-2'>
+							{errorStatus && <h6 data-cy="error-message">Country not found or invalid input</h6>}
+						</div>
+					</form>
 				</div>
 			</div>
+		</div>
 		</>
 	)
 }
