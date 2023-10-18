@@ -1,13 +1,51 @@
 # CountryExplorer - React & Node.js 
 ![alt text](src/assets/images/main.png)
+
+<img src="src/assets/images/main.png" alt="drawing" width="200"/>
 ## Description
 I created this web application to allow users to input a country's name, fetch information about that country from the REST Countries API, and display it to the user. This project consists of both a React frontend and a Node.js backend running Express.
 
 ## How to use
 
-Navigate to country form page
-Input country. Spelling must be correct
-Country will display
+Open your preferred web browser.
+Navigate to the application's URL, http://localhost:3000 
+
+Once on the main page, locate and click on the link or button leading to the 'Country Form' page.
+On the 'Country Form' page, you'll see a search bar or input box.
+
+
+Click on the search bar or input box.
+Type in the name of a country you're interested in. Please ensure that the spelling is correct, and use the full name of countryd (e.g., "United Kingdom", "South Africa").
+
+Press Enter or click on the search button/icon adjacent to the input box.
+
+
+After submitting the country's name, the application will fetch and display detailed information about the chosen country. This may include the country's capital, population and other relevant details.
+S
+
+If you wish to search for another country, simply return to the search bar, clear the previous entry, and input a new country's name.
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Error Handling
 
@@ -42,11 +80,14 @@ b. Send a response to the client with a 500 status along with the status code, i
 
 ## Testing
 
-Postman Testing
+### Postman Testing
 
-![alt text](src/assets/images/test200.png)
-![alt text](src/assets/images/test404.png)
-![alt text](src/assets/images/collection.png)
+<img src="src/assets/images/test200.png" alt="drawing" width="200"/>
+<img src="src/assets/images/test404.png" alt="drawing" width="200"/>
+<img src="src/assets/images/collection.png" alt="drawing" width="200"/>
+
+,
+<br>
 
 Cyrpess
 

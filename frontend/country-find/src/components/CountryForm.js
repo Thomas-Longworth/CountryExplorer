@@ -10,7 +10,6 @@ const CountryForm = () => {
 
 	const fetchCountry = async () => {
 		if (country === "") {
-
 			return setErrorStatus(true)
 		}
 		try {
@@ -20,7 +19,6 @@ const CountryForm = () => {
 				setErrorStatus(true)
 				throw new Error(`HTTP Error countries not found: ${response.status}`);
 			}
-			
 			const data = await response.json()
 			setCountryData(data)
 			setErrorStatus(false)
@@ -28,8 +26,6 @@ const CountryForm = () => {
 			console.log("An error occurred:", error);
 		} finally {
 			setLoading(false);
-		
-			
 		}
 	}
 
@@ -50,13 +46,9 @@ const CountryForm = () => {
 						/>
 						<div className='bg-light text-danger'>
 						{errorStatus && <h6 data-cy="error-message">Country not found or invalid input</h6>}
-						
-
+					
 						</div>
-					
 					</div>
-					
-
 					<div className='col'>
 						{loading ?
 							<div class="spinner-border text light" role="status">
@@ -67,25 +59,9 @@ const CountryForm = () => {
 							</div>
 						}
 					</div>
-
-
-
 				</div>
-
-
 			</div>
-
-
-
-
-
-
-
-
 		</>
-
-
-
 	)
 }
 
