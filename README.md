@@ -5,6 +5,8 @@
 ## Description
 I created this web application to allow users to input a country's name, fetch information about that country from the REST Countries API, and display it to the user. This project consists of both a React frontend and a Node.js backend running Express.
 
+https://countryexplore-93cb737548b8.herokuapp.com/country
+
 ## How to use
 
 Open your preferred web browser.
@@ -151,3 +153,43 @@ Input the name "fakecountry"
 
 
 ## Deployment
+
+1. Create two directories named Backend and Frontend.
+2.  In client run command > npx create-react-app app to create a react application
+
+3. In Backend run > npm install -g express for the epress server
+
+4. In client, run >npm run build. This will generate a production build version of the project that is optimized for a production deployment
+
+5. Copy the entire build directory in Client and paste into the backend directory.
+
+6. Include the following in the Backend index.js file:
+
+
+```
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+```
+
+7. Add /node_module to gitignore
+
+8. Install Heroku cli. Login into account in terminal
+
+9. Run
+
+```
+ > heroku create app 
+ > git init 
+ > git add . 
+ > git commit -m "inital commit"
+ > git:remote -a "app name"
+ > git push heroku master
+
+
+```
+10. This will successfully deploy the app to Heroku.
+     

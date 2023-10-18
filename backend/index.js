@@ -12,9 +12,6 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, 'build')));
 
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 
 
@@ -40,6 +37,10 @@ app.get("/countries/:country", async (req, res, next) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
-const PORT =  5000
+
+const PORT = process.env.PORT ||  5000
 app.listen(PORT)
