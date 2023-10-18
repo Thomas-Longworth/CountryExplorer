@@ -14,7 +14,7 @@ const CountryForm = () => {
 		}
 		try {
 			setLoading(true)
-			const response = await fetch(`http://localhost:5000/countries/${country}`)
+			const response = await fetch(`https://countryexplore-93cb737548b8.herokuapp.com/country/countries/${country}`)
 			if (!response.ok) {
 				setErrorStatus(true)
 				throw new Error(`HTTP Error countries not found: ${response.status}`);
