@@ -7,6 +7,9 @@
 <img src="frontend/country-find/src/assets/images/main.png" alt="drawing" width="50%"/>
 
 
+
+<br>
+
 ## Description
 
 <br>
@@ -14,6 +17,24 @@
 I created this [web application](https://countryexplore-93cb737548b8.herokuapp.com) to allow users to input a country's name, fetch information about that country from the REST Countries API, and display it to the user. This project consists of both a React frontend and a Node.js backend running Express.
 
 ----
+
+## Table of Contents
+
+- [Description](#description)
+- [How to use](#how-to-use)
+- [Testing](#testing)
+  - [Cyrpess](#cyrpess)
+    - [Cypress Component testing](#cypress-component-testing)
+    - [Cypres EtE test](#cypres-ete-test)
+  - [Postman Testing](#postman-testing)
+- [Error Handling](#error-handling)
+  - [API Fetch Error Handling](#api-fetch-error-handling)
+  - [General Error Handling](#general-error-handling)
+- [Deployment](#deployment)
+- [Credits](#credits)
+
+
+
 
 ## How to use
 
@@ -61,7 +82,11 @@ On the 'Country Form' page, you'll see a search bar or input box.
 
 #### Cypress Component testing
 
+<br>
+
 <img src="frontend/country-find/src/assets/images/cy-c.png" alt="drawing" width="50%"/>
+
+<br>
 
 
 
@@ -135,7 +160,7 @@ Steps:
 
 
 I used Postman to test the backend of my application.
-I ran a Postman collections which tested multiple requests with both invalid an valid coutnrty names.
+I ran a Postman collections which tested multiple requests with both invalid an valid country names. I checked that the response showed the correct status codes.
 
 
 
@@ -154,6 +179,8 @@ I ran a Postman collections which tested multiple requests with both invalid an 
 
 ### API Fetch Error Handling
 
+<br>
+
 When the server attempts to fetch country data from the restcountries.com API, there are two main scenarios it checks for:
 
 a. Country Not Found:
@@ -162,7 +189,11 @@ a. Country Not Found:
 b. Successful Fetch:
 - If the fetch request is successful, the server will respond with the country data received from the API. It also logs this data to the console.
 
+<br>
+
 ### General Error Handling:
+
+<br>
 
 If any other unexpected error occurs during the process (like network issues, parsing issues, etc.), the server will:
 
@@ -178,6 +209,9 @@ b. Send a response to the client with a 500 status along with the status code, i
 <br>
 
 ## Deployment
+
+
+<br>
 
 1. Create two directories named Backend and Frontend.
 
@@ -231,5 +265,7 @@ app.get('/*', (req, res) => {
 - https://restcountries.com/
      
 
+<br>
 
-  ----
+
+----
