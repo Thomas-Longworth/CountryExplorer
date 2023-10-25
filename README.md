@@ -76,7 +76,7 @@ On the 'Country Form' page, you'll see a search bar or input box.
 
 <br>
 
-### Cyrpess
+### Cypress
 
 <br>
 
