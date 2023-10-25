@@ -8,15 +8,12 @@ import Root from './layout/Root';
 function App() {
 	const router = createBrowserRouter(
 		createRoutesFromElements(
-			<Route path="/" element={<Root />}>
+			<Route path="/expense-full-stack" element={<Root />}>
 				<Route index element={<Home />} />
 				<Route path="/country" element={<CountryPage />} />
 			</Route>
 		)
 	)
-
-
-
 	return (
 		<div>
 			<RouterProvider router={router} />

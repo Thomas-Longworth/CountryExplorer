@@ -4,15 +4,13 @@ import { mount } from '@cypress/react';
 import Country from '../../src/components/Country'; 
 import { CountryContext } from '../../src/Contexts/CountryContext'; 
 
-describe('Country Component', () => {
-  
+describe('Country Component', () => { 
   it('displays "No countries to display yet" when countryData is empty', () => {
     mount(
       <CountryContext.Provider value={{ countryData: [] }}>
         <Country />
       </CountryContext.Provider>
     );
-
     cy.contains('No countries to diplay yet').should('be.visible');
   });
 
@@ -25,7 +23,6 @@ describe('Country Component', () => {
       population: 331002651,
       area: 9833520
     }];
-
     mount(
       <CountryContext.Provider value={{ countryData: mockData }}>
         <Country />

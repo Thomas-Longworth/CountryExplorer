@@ -1,80 +1,50 @@
 # CountryExplorer - React & Node.js 
-![alt text](src/assets/images/main.png)
 
-<img src="src/assets/images/main.png" alt="drawing" width="200"/>
+
+<br>
+<br>
+
+<img src="frontend/country-find/src/assets/images/main.png" alt="drawing" width="50%"/>
+
+
 ## Description
-I created this web application to allow users to input a country's name, fetch information about that country from the REST Countries API, and display it to the user. This project consists of both a React frontend and a Node.js backend running Express.
 
-https://countryexplore-93cb737548b8.herokuapp.com/country
+<br>
+
+I created this [web application](https://countryexplore-93cb737548b8.herokuapp.com) to allow users to input a country's name, fetch information about that country from the REST Countries API, and display it to the user. This project consists of both a React frontend and a Node.js backend running Express.
+
+----
 
 ## How to use
 
-Open your preferred web browser.
-Navigate to the application's URL, http://localhost:3000 
+<br>
 
-Once on the main page, locate and click on the link or button leading to the 'Country Form' page.
+1. Open your preferred web browser.
+Navigate to the application's URL: https://countryexplore-93cb737548b8.herokuapp.com/country
+
+2. Once on the main page, locate and click on the link or button leading to the 'Country Form' page.
 On the 'Country Form' page, you'll see a search bar or input box.
 
 
-Click on the search bar or input box.
-Type in the name of a country you're interested in. Please ensure that the spelling is correct, and use the full name of countryd (e.g., "United Kingdom", "South Africa").
+3. Click on the input box.
 
-Press Enter or click on the search button/icon adjacent to the input box.
+4. Type in the name of a country you're interested in. Please ensure that the spelling is correct, and use the full name of country (e.g., "United Kingdom", "South Africa").
 
-
-After submitting the country's name, the application will fetch and display detailed information about the chosen country. This may include the country's capital, population and other relevant details.
-S
-
-If you wish to search for another country, simply return to the search bar, clear the previous entry, and input a new country's name.
-.
+5. Press Enter or click on the search button/icon adjacent to the input box.
 
 
+6. After submitting the country's name, the application will fetch and displayinformation about the chosen country. This includes the country's capital, flag,  population and other relevant details.
+
+
+7. If you wish to search for another country, simply return to the search bar, clear the previous entry, and input a new country's name.
 
 
 
+---
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Error Handling
-
-### API Fetch Error Handling:
-
-When the server attempts to fetch country data from the restcountries.com API, there are two main scenarios it checks for:
-
-a. Country Not Found:
-- If the fetch request to the API does not succeed (for instance, if the country name isn't recognized by the API), the server will respond with the status code that the API returned. Along with this, it sends a JSON message to the client saying { error: "Country not found" }.
-
-b. Successful Fetch:
-- If the fetch request is successful, the server will respond with the country data received from the API. It also logs this data to the console.
-
-General Error Handling:
-
-If any other unexpected error occurs during the process (like network issues, parsing issues, etc.), the server will:
-a. Log the error to the console with a message of what went wrong.
-
-b. Send a response to the client with a 500 status along with the status code, it sends a JSON message { error: "Internal server error" }.
-
-
-
-
-
-
-
-
+<br>
 
 
 
@@ -82,18 +52,16 @@ b. Send a response to the client with a 500 status along with the status code, i
 
 ## Testing
 
-### Postman Testing
 
-<img src="src/assets/images/test200.png" alt="drawing" width="200"/>
-<img src="src/assets/images/test404.png" alt="drawing" width="200"/>
-<img src="src/assets/images/collection.png" alt="drawing" width="200"/>
-
-,
 <br>
 
-Cyrpess
+### Cyrpess
 
-Cypress Component testing
+<br>
+
+#### Cypress Component testing
+
+<img src="frontend/country-find/src/assets/images/cy-c.png" alt="drawing" width="50%"/>
 
 
 
@@ -112,49 +80,107 @@ Display the country's official name.
 Show the country's flag image.
 Render the region, capital, population, and area information in separate list items.
 
+<br>
+
+### Cypres EtE test
+
+<br>
 
 
+<img src="frontend/country-find/src/assets/images/cy-ec.png" alt="drawing" width="50%"/>
 
-
-
-
-
-
-
-
-
-
-
-Cypres EtE test
-
+<br>
 
 1. Country Input and Display Test:
+
 Purpose: Verify that a user can successfully input a country's name and subsequently view its details on the webpage.
 Steps:
-Navigate to the localhost application at port 3000.
-Click on a link or button (presumably leading to a form or input page) using the data attribute data-cy="linked".
-Input the name "ireland" into the input field labeled data-cy="input".
-Click the submit button with the data attribute data-cy="submit".
+- Navigate to the localhost application at port 3000.
+- Click on a link or button (presumably leading to a form or input page) using the data attribute data-cy="linked".
+- Input the name "ireland" into the input field labeled data-cy="input".
+- Click the submit button with the data attribute data-cy="submit".
+
 Expectation: After submitting, the webpage should display the country name "Republic of Ireland" under an element with the data attribute data-cy="country-name".
-2. Invalid Country Input Test:
+
+2. Invalid Country Input Test
+
 Purpose: Ensure that an error message is displayed when a user inputs an invalid or non-existent country name.
 Steps:
-Navigate to the localhost application at port 3000.
-Click on a link or button using the data attribute data-cy="linked".
-Input the name "fakecountry"
+- Navigate to the localhost application at port 3000.
+- Click on a link or button using the data attribute data-cy="linked".
+- Input the name "fakecountry"
+
+<br>
+
+<img src="frontend/country-find/src/assets/images/cy-e.png" alt="drawing" width="50%"/>
+
+<br>
+<br>
+
+### Postman Testing
+
+<br>
+
+<img src="frontend/country-find/src/assets/images/test200.png" alt="drawing" width="40%"/>
+
+<br>
+
+<img src="frontend/country-find/src/assets/images/test404.png" alt="drawing" width="40%"/>
+
+<br>
+
+<img src="frontend/country-find/src/assets/images/collection.png" alt="drawing" width="40%"/>
+
+<br>
+
+
+I used Postman to test the backend of my application.
+I ran a Postman collections which tested multiple requests with both invalid an valid coutnrty names.
 
 
 
 
+----
+
+<br>
 
 
+<br>
 
 
+## Error Handling
 
+<br>
+
+### API Fetch Error Handling
+
+When the server attempts to fetch country data from the restcountries.com API, there are two main scenarios it checks for:
+
+a. Country Not Found:
+- If the fetch request to the API does not succeed (for instance, if the country name isn't recognized by the API), the server will respond with the status code that the API returned. Along with this, it sends a JSON message to the client saying { error: "Country not found" }.
+
+b. Successful Fetch:
+- If the fetch request is successful, the server will respond with the country data received from the API. It also logs this data to the console.
+
+### General Error Handling:
+
+If any other unexpected error occurs during the process (like network issues, parsing issues, etc.), the server will:
+
+a. Log the error to the console with a message of what went wrong.
+
+b. Send a response to the client with a 500 status along with the status code, it sends a JSON message { error: "Internal server error" }.
+
+
+----
+
+<br>
+
+<br>
 
 ## Deployment
 
 1. Create two directories named Backend and Frontend.
+
 2.  In client run command > npx create-react-app app to create a react application
 
 3. In Backend run > npm install -g express for the epress server
@@ -192,4 +218,18 @@ app.get('/*', (req, res) => {
 
 ```
 10. This will successfully deploy the app to Heroku.
+
+----
+
+<br>
+
+<br>
+
+## Credits 
+
+
+- https://restcountries.com/
      
+
+
+  ----
